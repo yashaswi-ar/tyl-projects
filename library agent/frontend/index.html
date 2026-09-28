@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Agent</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Library Agent</h1>
+        <p>Library management assistant</p>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+        <!-- LEFT MENU -->
+        <aside class="menu">
+
+            <h2>Library Menu</h2>
+
+            <button onclick="menuAction('available')">
+                📚 Available Books
+            </button>
+
+            <button onclick="menuAction('all')">
+                📖 All Books
+            </button>
+
+            <button onclick="menuAction('borrowed')">
+                📋 Borrowed Books
+            </button>
+
+            <button onclick="menuAction('overdue')">
+                ⚠️ Overdue Books
+            </button>
+
+            <button onclick="menuAction('search')">
+                🔎 Search Books
+            </button>
+
+            <button onclick="menuAction('copies')">
+                📦 Check Copies
+            </button>
+
+            <button onclick="menuAction('borrow')">
+                ➕ Borrow Book
+            </button>
+
+            <button onclick="menuAction('return')">
+                ↩️ Return Book
+            </button>
+
+
+            <!-- SEPARATE MENU RESULT -->
+            <div class="menu-result-box">
+
+                <div id="menu-result">
+
+                    <strong>Library Menu</strong>
+
+                    <p>Select an option above.</p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CHAT AREA -->
+        <main class="chat-container">
+
+            <!-- CHAT MESSAGES -->
+            <div id="chat-box" class="chat-box">
+
+                <div class="message bot-message welcome-message">     
+                    Hello! How can I help you today?<br>
+                    You can ask me about books, authors, availability, borrowed books, overdue books, borrowing and returns.
+                </div>
+                    
+
+            </div>
+
+
+            <!-- CHAT INPUT -->
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="message-input"
+                    placeholder="Ask something about the library..."
+                    autocomplete="off"
+                >
+
+                <button id="send-button">
+                    Send
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
