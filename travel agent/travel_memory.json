@@ -1,0 +1,27 @@
+{
+    "preferences": {
+        "hotel": "Budget"
+    },
+    "past_trips": [
+        {
+            "destination": "Goa",
+            "days": 3,
+            "cost": 6600
+        },
+        {
+            "destination": "goa",
+            "days": "3",
+            "cost": 7200
+        },
+        {
+            "destination": "goa",
+            "days": "3",
+            "cost": 7200
+        },
+        {
+            "destination": "goa",
+            "days": "4",
+            "cost": 5000
+        }
+    ]
+}
