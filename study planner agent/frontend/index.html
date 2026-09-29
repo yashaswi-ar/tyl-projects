@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Study Planner Agent</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="hero">
+
+            <div class="badge">
+                STUDY PLANNER AGENT
+            </div>
+
+            <h1>
+                Plan your studies smarter.
+            </h1>
+
+            <p>
+                Create a personalized study plan
+                based on your VTU subjects, available
+                study time, deadlines and additional studies.
+            </p>
+
+        </header>
+
+
+        <!-- STUDENT INFORMATION -->
+
+        <section class="card">
+
+            <div class="section-title">
+                <span>01</span>
+                <div>
+                    <h2>Student Information</h2>
+                    <p>Tell us about your study schedule.</p>
+                </div>
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Study Hours Per Day
+                    </label>
+
+                    <input
+                        type="number"
+                        id="hoursPerDay"
+                        min="1"
+                        step="0.5"
+                        placeholder="Example: 4"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VTU EXAM -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <span>02</span>
+
+                <div>
+                    <h2>VTU Exam / Target Date</h2>
+                    <p>
+                        Your common VTU exam or target date.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Exam / Target Date
+                </label>
+
+                <input
+                    type="date"
+                    id="examDate"
+                >
+
+                <small>
+                    Leave empty if you want a weekly plan.
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- VTU SUBJECTS -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <span>03</span>
+
+                <div>
+                    <h2>VTU Subjects</h2>
+                    <p>
+                        Add your semester subjects.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="subjectsContainer"></div>
+
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="addSubject()">
+
+                + Add Subject
+
+            </button>
+
+        </section>
+
+
+        <!-- ADDITIONAL STUDIES -->
+
+        <section class="card">
+
+            <div class="section-title">
+
+                <span>04</span>
+
+                <div>
+                    <h2>Additional Studies</h2>
+                    <p>
+                        Add aptitude, NPTEL, DSA,
+                        placement preparation, etc.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="additionalContainer"></div>
+
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="addAdditionalStudy()">
+
+                + Add Additional Study
+
+            </button>
+
+        </section>
+
+
+        <!-- GENERATE -->
+
+        <section class="generate-section">
+
+            <button
+                class="generate-button"
+                onclick="generatePlan()">
+
+                Generate Study Plan
+
+                <span>→</span>
+
+            </button>
+
+        </section>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorMessage"
+            class="error-message">
+        </div>
+
+
+        <!-- RESULT -->
+
+        <section
+            id="result"
+            class="result-section hidden">
+
+
+            <!-- SUMMARY -->
+
+            <div class="result-header">
+
+                <div>
+
+                    <div class="badge">
+                        YOUR PLAN
+                    </div>
+
+                    <h2 id="resultTitle">
+                        Study Plan
+                    </h2>
+
+                    <p id="resultSubtitle"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+
+            <div
+                id="summaryCards"
+                class="summary-grid">
+            </div>
+
+
+            <!-- DAILY PLAN -->
+
+            <div class="result-block">
+
+                <div class="result-block-header">
+
+                    <div>
+                        <span class="result-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Date-wise Study Plan
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="dailyPlan"
+                    class="daily-plan">
+                </div>
+
+            </div>
+
+
+            <!-- WEEKLY GOALS -->
+
+            <div class="result-block">
+
+                <div class="result-block-header">
+
+                    <div>
+                        <span class="result-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Weekly Goals
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="weeklyGoals"
+                    class="weekly-goals">
+                </div>
+
+            </div>
+
+
+            <!-- WARNING -->
+
+            <div
+                id="warningBlock"
+                class="warning-block hidden">
+
+                <h3>
+                    Some work could not fit
+                </h3>
+
+                <div id="warnings"></div>
+
+            </div>
+
+
+            <!-- RULES -->
+
+            <div class="result-block">
+
+                <div class="result-block-header">
+
+                    <div>
+                        <span class="result-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Priority System
+                        </h3>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="rules"
+                    class="rules">
+                </div>
+
+            </div>
+
+
+            <!-- END -->
+
+            <div class="complete-message">
+
+                <div class="complete-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Plan Complete
+                </h3>
+
+                <p>
+                    Stay consistent with your study plan.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

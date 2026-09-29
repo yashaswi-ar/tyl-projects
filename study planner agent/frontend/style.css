@@ -1,0 +1,824 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #182230;
+    line-height: 1.6;
+}
+
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 40px 0 70px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 35px 20px 45px;
+}
+
+
+.badge {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: #e9eefc;
+    color: #4056a1;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-size: 44px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #697586;
+    font-size: 17px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 5px 20px rgba(20, 30, 50, 0.04);
+}
+
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-title > span {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eef1fb;
+
+    color: #4056a1;
+
+    font-weight: 700;
+}
+
+
+.section-title h2 {
+    font-size: 21px;
+}
+
+
+.section-title p {
+    color: #7b8492;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.form-group small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #8a94a3;
+
+    font-size: 12px;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d9dee7;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: white;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+input:focus,
+select:focus {
+    border-color: #6174bd;
+
+    box-shadow:
+        0 0 0 3px rgba(97, 116, 189, 0.10);
+}
+
+
+/* =========================
+   SUBJECT BOX
+========================= */
+
+.dynamic-item {
+    border: 1px solid #e3e7ee;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #fafbfc;
+}
+
+
+.dynamic-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+
+.dynamic-header h3 {
+    font-size: 16px;
+}
+
+
+.remove-button {
+    border: none;
+
+    background: transparent;
+
+    color: #9a4b4b;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.dynamic-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.additional-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 2fr 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.secondary-button {
+    border: 1px solid #cfd6e2;
+
+    background: white;
+
+    color: #354052;
+
+    padding: 11px 17px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.secondary-button:hover {
+    background: #f4f6fa;
+}
+
+
+.generate-section {
+    text-align: center;
+
+    padding: 10px 0 35px;
+}
+
+
+.generate-button {
+    border: none;
+
+    background: #4056a1;
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(64, 86, 161, 0.20);
+
+    transition: 0.2s;
+}
+
+
+.generate-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.generate-button span {
+    margin-left: 10px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+    display: none;
+
+    padding: 14px 18px;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background: #fff0f0;
+
+    border: 1px solid #f1cccc;
+
+    color: #a04444;
+}
+
+
+.error-message.show {
+    display: block;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-section {
+    margin-top: 20px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.result-header {
+    padding: 30px 5px;
+
+    text-align: center;
+}
+
+
+.result-header h2 {
+    font-size: 32px;
+
+    margin-bottom: 6px;
+}
+
+
+.result-header p {
+    color: #788393;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.summary-card {
+    background: white;
+
+    border: 1px solid #e2e7ef;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    text-align: center;
+}
+
+
+.summary-card .value {
+    font-size: 26px;
+
+    font-weight: 750;
+
+    color: #4056a1;
+}
+
+
+.summary-card .label {
+    font-size: 13px;
+
+    color: #7a8492;
+}
+
+
+/* =========================
+   RESULT BLOCK
+========================= */
+
+.result-block {
+    background: white;
+
+    border: 1px solid #e2e7ef;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 22px;
+}
+
+
+.result-block-header {
+    margin-bottom: 20px;
+}
+
+
+.result-block-header > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.result-number {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #4056a1;
+
+    background: #eef1fb;
+
+    padding: 6px 9px;
+
+    border-radius: 7px;
+}
+
+
+.result-block h3 {
+    font-size: 20px;
+}
+
+
+/* =========================
+   DAILY PLAN
+========================= */
+
+.day-card {
+    border: 1px solid #e3e7ee;
+
+    border-radius: 14px;
+
+    margin-bottom: 14px;
+
+    overflow: hidden;
+}
+
+
+.day-header {
+    padding: 15px 18px;
+
+    background: #f7f8fb;
+
+    border-bottom: 1px solid #e3e7ee;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.day-header h4 {
+    font-size: 16px;
+}
+
+
+.day-total {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #4056a1;
+}
+
+
+.study-row {
+    display: grid;
+
+    grid-template-columns:
+        160px 1.5fr 1.5fr 80px;
+
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    border-bottom: 1px solid #eef0f4;
+
+    align-items: center;
+}
+
+
+.study-row:last-child {
+    border-bottom: none;
+}
+
+
+.category {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    color: #596575;
+}
+
+
+.category.vtu {
+    color: #4056a1;
+}
+
+
+.category.additional {
+    color: #477b66;
+}
+
+
+.category.revision {
+    color: #8a6542;
+}
+
+
+.study-name {
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+
+.study-unit {
+    color: #697586;
+
+    font-size: 13px;
+}
+
+
+.study-hours {
+    text-align: right;
+
+    font-weight: 700;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   WEEKLY GOALS
+========================= */
+
+.week-card {
+    border: 1px solid #e2e7ef;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.week-card h4 {
+    margin-bottom: 4px;
+}
+
+
+.week-dates {
+    color: #8a94a2;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.goal {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    font-size: 14px;
+}
+
+
+.goal:last-child {
+    border-bottom: none;
+}
+
+
+.goal-name {
+    font-weight: 650;
+
+    min-width: 170px;
+}
+
+
+.goal-text {
+    color: #697586;
+}
+
+
+/* =========================
+   WARNING
+========================= */
+
+.warning-block {
+    background: #fff8ed;
+
+    border: 1px solid #f0d8af;
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    margin-bottom: 22px;
+}
+
+
+.warning-block h3 {
+    margin-bottom: 12px;
+
+    color: #805b26;
+}
+
+
+.warning-item {
+    padding: 7px 0;
+
+    color: #745f43;
+}
+
+
+/* =========================
+   RULES
+========================= */
+
+.rules {
+    display: grid;
+
+    gap: 9px;
+}
+
+
+.rule {
+    padding: 11px 14px;
+
+    background: #f7f8fb;
+
+    border-radius: 9px;
+
+    color: #596575;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   COMPLETE
+========================= */
+
+.complete-message {
+    text-align: center;
+
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid #e2e7ef;
+
+    border-radius: 18px;
+}
+
+
+.complete-icon {
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8f3ed;
+
+    color: #477b66;
+
+    font-weight: 800;
+
+    font-size: 20px;
+}
+
+
+.complete-message h3 {
+    margin-bottom: 5px;
+}
+
+
+.complete-message p {
+    color: #7a8492;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .form-grid,
+    .dynamic-grid,
+    .additional-grid,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .study-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .study-hours {
+        text-align: left;
+    }
+
+    .goal {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .card,
+    .result-block {
+        padding: 20px;
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+}
